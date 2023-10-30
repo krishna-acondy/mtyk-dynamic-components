@@ -1,6 +1,12 @@
 # mtyk-dynamic-components
 
 A React TypeScript app demonstrating dynamic component configuration from schemas and templates
+With this app, I'd like to demonstrate a proof of concept for dynamically generating components
+using a combination of pre-defined schemas, runtime configuration and transforms.
+
+<img width="1221" alt="image" src="https://github.com/krishna-acondy/mtyk-dynamic-components/assets/2980428/a485dee5-52ae-49ef-898d-7c7ab23e8146">
+
+
 
 ## Running the app locally
 
