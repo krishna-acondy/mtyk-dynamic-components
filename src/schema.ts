@@ -8,7 +8,6 @@ import {
   enum as ZodEnum,
   function as ZodFunction,
   any,
-  date,
 } from "zod";
 
 const propTemplate = object({
