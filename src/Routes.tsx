@@ -6,10 +6,10 @@ import Create from "./pages/Create";
 export default function Routes() {
   return useRoutes([
     {
-      path: "/gallery",
+      path: "gallery",
       element: <Gallery />,
     },
-    { path: "/templates/:templateId/create", element: <Create /> },
-    { path: "/", element: <Navigate to="/gallery" /> },
+    { path: "templates/:templateId/create", element: <Create /> },
+    { path: "", element: <Navigate to="/gallery" /> },
   ]);
 }
