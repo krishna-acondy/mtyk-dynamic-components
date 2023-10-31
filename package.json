@@ -15,12 +15,15 @@
     "@fontsource/roboto": "^5.0.8",
     "@mui/icons-material": "^5.14.15",
     "@mui/material": "^5.14.15",
+    "date-fns": "^2.30.0",
     "lodash": "^4.17.21",
+    "nanoid": "^5.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.47.0",
     "react-router": "^6.17.0",
     "react-router-dom": "^6.17.0",
+    "react-use": "^17.4.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {

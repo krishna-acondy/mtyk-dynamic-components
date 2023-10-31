@@ -2,6 +2,7 @@ import { Navigate, useRoutes } from "react-router-dom";
 
 import Gallery from "./pages/Gallery";
 import Create from "./pages/Create";
+import Components from "./pages/Components";
 
 export default function Routes() {
   return useRoutes([
@@ -9,7 +10,11 @@ export default function Routes() {
       path: "gallery",
       element: <Gallery />,
     },
+    {
+      path: "components",
+      element: <Components />,
+    },
     { path: "templates/:templateId/create", element: <Create /> },
-    { path: "", element: <Navigate to="/gallery" /> },
+    { path: "", element: <Navigate to="/components" /> },
   ]);
 }

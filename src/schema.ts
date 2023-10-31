@@ -8,6 +8,7 @@ import {
   enum as ZodEnum,
   function as ZodFunction,
   any,
+  date,
 } from "zod";
 
 const propTemplate = object({
@@ -44,6 +45,19 @@ const componentTemplate = object({
     ),
 });
 
+const componentDefinition = object({
+  id: string(),
+  name: string(),
+  createdAt: string().datetime(),
+  templateId: string(),
+  config: object({
+    props: array(any()),
+    children: array(any()).optional(),
+  }),
+});
+
 export type ComponentTemplate = Infer<typeof componentTemplate>;
 
 export type PropTemplate = Infer<typeof propTemplate>;
+
+export type ComponentDefinition = Infer<typeof componentDefinition>;
