@@ -7,6 +7,8 @@ const CreateContext = React.createContext({
   currentTemplate: null as ComponentTemplate | null,
   config: null as Record<string, unknown> | null,
   setConfig: (_config: Record<string, unknown>) => {},
+  isDrawerOpen: false,
+  setIsDrawerOpen: (_isDrawerOpen: boolean) => {},
 });
 
 export default function CreateProvider(
@@ -23,6 +25,8 @@ export default function CreateProvider(
     null
   );
 
+  const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+
   const { templateId } = useParams();
 
   React.useEffect(() => {
@@ -32,7 +36,15 @@ export default function CreateProvider(
   }, [templateId]);
 
   return (
-    <CreateContext.Provider value={{ currentTemplate, config, setConfig }}>
+    <CreateContext.Provider
+      value={{
+        currentTemplate,
+        config,
+        setConfig,
+        isDrawerOpen,
+        setIsDrawerOpen,
+      }}
+    >
       {children}
     </CreateContext.Provider>
   );

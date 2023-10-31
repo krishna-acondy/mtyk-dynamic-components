@@ -6,14 +6,14 @@ import { Dashboard } from "@mui/icons-material";
 
 export default function Preview() {
   const { darkMode } = useTheme();
-  const { config, currentTemplate } = useCreateContext();
+  const { config, currentTemplate, isDrawerOpen } = useCreateContext();
   const Component = currentTemplate?.component as any;
   const { props, children, isValid } =
     currentTemplate?.transformProps(currentTemplate, config) || {};
   return (
     <Stack
       width="100%"
-      height="100%"
+      height={isDrawerOpen ? "50%" : "100%"}
       justifyContent="center"
       alignItems="center"
       sx={{

@@ -6,9 +6,17 @@ import {
   Stack,
   Switch,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { PropTemplate } from "../../schema";
-import { Form, FormInput, FormInputList, FormSelect } from "../../components";
+import {
+  BottomSheet,
+  Form,
+  FormInput,
+  FormInputList,
+  FormSelect,
+} from "../../components";
 import { useCreateContext } from "./CreateContext";
 
 const drawerWidth = 320;
@@ -65,43 +73,60 @@ const formFields = {
 };
 
 export default function ConfigForm() {
-  const { currentTemplate, setConfig } = useCreateContext();
+  const theme = useTheme();
+  const isSmUp = useMediaQuery(theme.breakpoints.up("sm"));
+
+  const { currentTemplate, setConfig, setIsDrawerOpen, isDrawerOpen } =
+    useCreateContext();
+  const content = currentTemplate ? (
+    <Form
+      onChange={(config) => {
+        setConfig(config);
+      }}
+    >
+      <Stack gap={4} p={2}>
+        {currentTemplate.props.map((prop) => formFields[prop.type](prop))}
+      </Stack>
+    </Form>
+  ) : null;
   return currentTemplate ? (
-    <Drawer
-      sx={{
-        width: drawerWidth,
-        position: "relative",
-        top: 0,
-        left: 0,
-        flexShrink: 0,
-        "& .MuiDrawer-paper": {
+    isSmUp ? (
+      <Drawer
+        sx={{
           width: drawerWidth,
           position: "relative",
           top: 0,
           left: 0,
-        },
-      }}
-      variant="persistent"
-      open
-    >
-      <Stack>
-        <Stack px={2} py={1.5}>
-          <Typography variant="h6">{currentTemplate.name}</Typography>
-          <Typography variant="caption">
-            {currentTemplate.description}
-          </Typography>
-        </Stack>
-        <Divider />
-        <Form
-          onChange={(config) => {
-            setConfig(config);
-          }}
-        >
-          <Stack gap={4} p={2}>
-            {currentTemplate.props.map((prop) => formFields[prop.type](prop))}
+          flexShrink: 0,
+          "& .MuiDrawer-paper": {
+            width: drawerWidth,
+            position: "relative",
+            top: 0,
+            left: 0,
+          },
+        }}
+        variant="persistent"
+        open
+      >
+        <Stack>
+          <Stack px={2} py={1.5}>
+            <Typography variant="h6">{currentTemplate.name}</Typography>
+            <Typography variant="caption">
+              {currentTemplate.description}
+            </Typography>
           </Stack>
-        </Form>
-      </Stack>
-    </Drawer>
+          <Divider />
+          {content}
+        </Stack>
+      </Drawer>
+    ) : (
+      <BottomSheet
+        onToggle={(open) => setIsDrawerOpen(open)}
+        open={isDrawerOpen}
+        title={<Typography sx={{ p: 2 }}>Configure component</Typography>}
+      >
+        {content}
+      </BottomSheet>
+    )
   ) : null;
 }
