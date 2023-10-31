@@ -1,3 +1,2 @@
-export { default } from './FormInput'
-export * from './FormInput'
-export * from './FormInputProps'
+export { default, default as FormInput } from "./FormInput";
+export * from "./FormInputProps";

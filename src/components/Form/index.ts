@@ -1,2 +1,2 @@
-export { default } from './Form'
-export * from './FormProps'
+export { default, default as Form } from "./Form";
+export * from "./FormProps";

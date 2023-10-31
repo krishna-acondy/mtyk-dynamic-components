@@ -14,11 +14,7 @@ export default function Header() {
       }}
     >
       <Toolbar sx={{ maxHeight: 64 }}>
-        <Box
-          sx={{ textDecoration: "none" }}
-          component={Link}
-          to={`${import.meta.env.BASE_URL}`}
-        >
+        <Box sx={{ textDecoration: "none" }} component={Link} to="/">
           <Logo />
         </Box>
         <Stack direction="row" alignItems="center" marginLeft="auto">
