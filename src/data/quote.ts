@@ -17,7 +17,7 @@ export const quote: ComponentTemplate = {
       name: "Author",
       id: "author",
       type: "string",
-      required: true,
+      required: false,
     },
   ],
   transformProps: (template: ComponentTemplate, props: any) => {
