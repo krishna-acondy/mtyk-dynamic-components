@@ -19,6 +19,19 @@ The app is deployed to GitHub Pages at https://krishna-acondy.io/mtyk-dynamic-co
 Deployments are configured via a GitHub Actions workflow that runs on pushes to `main`.
 A deployment can also be manually triggered from the 'Actions' page.
 
+## Routing
+
+### `/components`
+This is the page that the user first sees when the app is opened. It lists all the components the user has previously created.
+Component definitions are saved to and retrieved from the browser's local storage.
+You can click on a component to see it rendered in a modal dialog.
+
+### `/gallery`
+This is a gallery of templates you can choose from to create a component. Clicking a template will take you to the create page.
+
+### `/templates/:templateId/create`
+This page allows the user to configure an instance of a given component, see a preview, and save the definition with a name.
+
 ## Available Components
 
 ### Quote
