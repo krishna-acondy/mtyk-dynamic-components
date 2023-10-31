@@ -18,3 +18,21 @@ Then, run `pnpm run dev` to get a local dev server running.
 The app is deployed to GitHub Pages at https://krishna-acondy.io/mtyk-dynamic-components/.
 Deployments are configured via a GitHub Actions workflow that runs on pushes to `main`.
 A deployment can also be manually triggered from the 'Actions' page.
+
+## Available Components
+
+### Quote
+A piece of quoted text with an optional author
+<img width="890" alt="image" src="https://github.com/krishna-acondy/mtyk-dynamic-components/assets/2980428/13c4bd75-1e80-4c6f-9b47-6a65972442b2">
+
+### Button
+A button with the specified text, with different options for colour and styling.
+<img width="897" alt="image" src="https://github.com/krishna-acondy/mtyk-dynamic-components/assets/2980428/bbc821ac-8eb1-4e15-b760-de9aae2bc2f0">
+
+### Checklist
+A list of items to check off.
+<img width="891" alt="image" src="https://github.com/krishna-acondy/mtyk-dynamic-components/assets/2980428/37bafff6-eb3b-4eba-b283-af9eb1e1ff29">
+
+### Data Table
+A table of rows with the specified columns.
+<img width="893" alt="image" src="https://github.com/krishna-acondy/mtyk-dynamic-components/assets/2980428/037011a4-601a-409e-be6f-82fd2841d5bc">
